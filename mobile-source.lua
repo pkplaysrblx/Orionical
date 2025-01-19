@@ -110,6 +110,13 @@ function OrionLib:IsRunning()
     end
 end
 
+function OrionLib:ToggleUI()
+    if gethui then
+        gethui():FindFirstChild("Orion").Enabled = not gethui():FindFirstChild("Orion").Enabled
+    else
+        game.CoreGui.Orion.Enabled = not game.CoreGui.Orion.Enabled
+end
+
 local function AddConnection(Signal, Function)
     if (not OrionLib:IsRunning()) then
         return
